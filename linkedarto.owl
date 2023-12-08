@@ -1,0 +1,910 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY linkedarto "http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#"
+     xml:base="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto"
+     xmlns:linkedarto="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#belongsToArtist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#belongsToArtist">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#belongsToPortfolio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#belongsToPortfolio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#createdByArtist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#createdByArtist">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#exposedArt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#exposedArt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Exposition"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#followedByUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#followedByUser">
+        <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#goingToEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#goingToEvent">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasArtwork -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasArtwork">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#createdByArtist"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPermormers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPermormers">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Festival"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPortfolio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPortfolio">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#belongsToArtist"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#likedByUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#likedByUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#likesArtwork -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#likesArtwork">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#organisedByAdmin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#organisedByAdmin">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Admin"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#soldToClient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#soldToClient">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client"/>
+    </owl:ObjectProperty>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#hasPosts">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#postedByUser"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#postedByUser -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#postedByUser">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Commentaire"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:ObjectProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#artworkDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#artworkDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#description"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#artworkTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#artworkTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#title"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#available -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#available">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sold_out"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#status"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#biography -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#biography">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#description"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#cancelled -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#cancelled">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#status"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#comment_body -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#comment_body">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Commentaire"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#creationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#creationDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#eventDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#eventDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#eventTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#eventTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#title"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#gender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#nationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#nationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#phone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#phone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#portfolioDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#portfolioDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#description"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#post_body -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#post_body">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#price">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#rating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilFreelancer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sold_out -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sold_out">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#status"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#status"/>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Admin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Admin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ArtNumerique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ArtNumerique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ArtworkCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ArtworkCondition"/>
+
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+    </owl:Class>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Commentaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Commentaire"/>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Exposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Exposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Festival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Festival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+    </owl:Class>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#New -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#FNew">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#FArtworkCondition"/>
+    </owl:Class>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Photographie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Photographie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+    </owl:Class>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste"/>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Profil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Profil"/>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilClient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilClient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Profil"/>
+    </owl:Class>
+    
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilFreelancer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilFreelancer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Profil"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Sculpture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Sculpture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+    </owl:Class>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Used -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Used">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ArtworkCondition"/>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#amine -->
+
+<!--     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#amine"> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/> -->
+<!--         <ID rdf:datatype="&xsd;int">1</ID> -->
+<!--         <phone rdf:datatype="&xsd;long">99123123</phone> -->
+<!--         <name rdf:datatype="&xsd;string">amine</name> -->
+<!--         <email rdf:datatype="&xsd;string">amine@email.com</email> -->
+<!--         <gender rdf:datatype="&xsd;string">homme</gender> -->
+<!--         <biography rdf:datatype="&xsd;string">je suis amine</biography> -->
+<!--         <nationality rdf:datatype="&xsd;string">tunisian</nationality> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_expo"/> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/> -->
+<!--         <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/> -->
+<!--         <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/> -->
+<!--     </owl:NamedIndividual> -->
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_expo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_expo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Exposition"/>
+        <eventDate rdf:datatype="&xsd;dateTime">2012-12-05T00:00:00</eventDate>
+        <eventTitle rdf:datatype="&xsd;string">art expo</eventTitle>
+        <available rdf:datatype="&xsd;boolean">false</available>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <cancelled rdf:datatype="&xsd;boolean">false</cancelled>
+        <cancelled rdf:datatype="&xsd;boolean">true</cancelled>
+        <organisedByAdmin rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/>
+        <exposedArt rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/>
+        <exposedArt rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#photo1"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Evenement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Festival"/>
+        <eventDate rdf:datatype="&xsd;dateTime">2023-11-31T00:00:00</eventDate>
+        <location rdf:datatype="&xsd;string">Tunis</location>
+        <eventTitle rdf:datatype="&xsd;string">art fest</eventTitle>
+        <cancelled rdf:datatype="&xsd;boolean">false</cancelled>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <hasPermormers rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#amine"/>
+        <organisedByAdmin rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#aziz -->
+
+<!--     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#aziz"> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/> -->
+<!--         <ID rdf:datatype="&xsd;int">2</ID> -->
+<!--         <phone rdf:datatype="&xsd;long">91123123</phone> -->
+<!--         <name rdf:datatype="&xsd;string">aziz foulen</name> -->
+<!--         <email rdf:datatype="&xsd;string">aziz@email.com</email> -->
+<!--         <gender rdf:datatype="&xsd;string">homme</gender> -->
+<!--         <biography rdf:datatype="&xsd;string">je suis aziz</biography> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/> -->
+<!--         <hasPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#azizPortfolio"/> -->
+<!--         <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/> -->
+<!--         <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sculpt1"/> -->
+<!--     </owl:NamedIndividual> -->
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#azizPortfolio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#azizPortfolio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <portfolioDescription rdf:datatype="&xsd;string">portfolio de aziz</portfolioDescription>
+        <belongsToArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#aziz"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#comment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#comment1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Commentaire"/>
+        <ID rdf:datatype="&xsd;string">1</ID>
+        <comment_body rdf:datatype="&xsd;string">this is a comment</comment_body>
+        <postedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#picasso"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <ID rdf:datatype="&xsd;int">3</ID>
+        <phone rdf:datatype="&xsd;long">92123123</phone>
+        <gender rdf:datatype="&xsd;string">homme</gender>
+        <biography rdf:datatype="&xsd;string">houba houbewi</biography>
+        <email rdf:datatype="&xsd;string">houba@email.com</email>
+        <name rdf:datatype="&xsd;string">iheb</name>
+        <nationality rdf:datatype="&xsd;string">tunisian</nationality>
+        <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/>
+        <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/>
+        <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#aymen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <ID rdf:datatype="&xsd;int">4</ID>
+        <phone rdf:datatype="&xsd;long">12345678</phone>
+        <gender rdf:datatype="&xsd;string">homme</gender>
+        <biography rdf:datatype="&xsd;string">je suis aymen</biography>
+        <email rdf:datatype="&xsd;string">aymen@email.com</email>
+        <name rdf:datatype="&xsd;string">aymen</name>
+        <nationality rdf:datatype="&xsd;string">tunisian</nationality>
+        <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ahmed"/>
+        <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/>
+        <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Portfolio"/>
+        <portfolioDescription rdf:datatype="&xsd;string">portfolio de Iheb</portfolioDescription>
+        <belongsToArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema -->
+
+<!--     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Admin"/> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/> -->
+<!--         <ID rdf:datatype="&xsd;int">4</ID> -->
+<!--         <biography rdf:datatype="&xsd;string">je suis zizou </biography> -->
+<!--         <name rdf:datatype="&xsd;string">oussema chaabene</name> -->
+<!--         <email rdf:datatype="&xsd;string">zizou@email.com</email> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/> -->
+<!--         <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/> -->
+<!--     </owl:NamedIndividual> -->
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture"/>
+        <ID rdf:datatype="&xsd;int">1</ID>
+        <price rdf:datatype="&xsd;double">20.0</price>
+        <creationDate rdf:datatype="&xsd;dateTime">2023-02-12</creationDate>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <artworkDescription rdf:datatype="&xsd;string">painting by Iheb</artworkDescription>
+        <title rdf:datatype="&xsd;string">painting one</title>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+        <belongsToPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture"/>
+        <ID rdf:datatype="&xsd;int">2</ID>
+        <price rdf:datatype="&xsd;double">20.0</price>
+        <creationDate rdf:datatype="&xsd;dateTime">2023-02-13</creationDate>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <artworkDescription rdf:datatype="&xsd;string">painting by Aymen</artworkDescription>
+        <title rdf:datatype="&xsd;string">painting two</title>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+        <belongsToPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture"/>
+        <ID rdf:datatype="&xsd;int">2</ID>
+        <creationDate rdf:datatype="&xsd;dateTime">2023-04-11</creationDate>
+        <price rdf:datatype="&xsd;double">50.0</price>
+        <artworkTitle rdf:datatype="&xsd;string">painting numero dos</artworkTitle>
+        <artworkDescription rdf:datatype="&xsd;string">painting of landscape</artworkDescription>
+        <sold_out rdf:datatype="&xsd;boolean">true</sold_out>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+        <belongsToPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio"/>
+        <soldToClient rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#synda"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Peinture"/>
+        <creationDate rdf:datatype="&xsd;dateTime">2015-04-21</creationDate>
+        <ID rdf:datatype="&xsd;int">5</ID>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <artworkDescription rdf:datatype="&xsd;string">new painting</artworkDescription>
+        <title rdf:datatype="&xsd;string">painting numero tres</title>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#amine"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#photo1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#photo1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Photographie"/>
+        <price rdf:datatype="&xsd;double">100.0</price>
+        <ID rdf:datatype="&xsd;int">3</ID>
+        <artworkDescription rdf:datatype="&xsd;string">beautiful photo</artworkDescription>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <artworkTitle rdf:datatype="&xsd;string">photo 1</artworkTitle>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#aziz"/>
+        <belongsToPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#azizPortfolio"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedart_ont#picasso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#picasso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artiste"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+        <hasArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sculpt2"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedart_ont#post1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#post1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Poste"/>
+        <post_body rdf:datatype="&xsd;string">this is a post example</post_body>
+        <postedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedart_ont#profilIheb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#profilIheb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilFreelancer"/>
+        <rating rdf:datatype="&xsd;string">5</rating>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedart_ont#profilSynda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#profilSynda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ProfilClient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sculpt1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sculpt1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Artwork"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Sculpture"/>
+        <price rdf:datatype="&xsd;double">1000.0</price>
+        <ID rdf:datatype="&xsd;int">4</ID>
+        <sold_out rdf:datatype="&xsd;boolean">false</sold_out>
+        <artworkDescription rdf:datatype="&xsd;string">new sculpture </artworkDescription>
+        <title rdf:datatype="&xsd;string">sculpture one</title>
+        <available rdf:datatype="&xsd;boolean">true</available>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#iheb"/>
+        <belongsToPortfolio rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ihebPortfolio"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedart_ont#sculpt2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#sculpt2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#New"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Sculpture"/>
+        <createdByArtist rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#picasso"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#skander -->
+
+<!--     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#skander"> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client"/> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/> -->
+<!--         <ID rdf:datatype="&xsd;int">6</ID> -->
+<!--         <biography rdf:datatype="&xsd;string">je suis skander</biography> -->
+<!--         <name rdf:datatype="&xsd;string">skander grami</name> -->
+<!--         <email rdf:datatype="&xsd;string">skander@email.com</email> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/> -->
+<!--         <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/> -->
+<!--         <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/> -->
+<!--     </owl:NamedIndividual> -->
+
+
+
+    <!-- http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#synda -->
+
+<!--     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#synda"> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client"/> -->
+<!--         <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/> -->
+<!--         <ID rdf:datatype="&xsd;int">7</ID> -->
+<!--         <phone rdf:datatype="&xsd;long">93851304</phone> -->
+<!--         <gender rdf:datatype="&xsd;string">femme</gender> -->
+<!--         <biography rdf:datatype="&xsd;string">je suis synda</biography> -->
+<!--         <name rdf:datatype="&xsd;string">sandoud</name> -->
+<!--         <email rdf:datatype="&xsd;string">sandy@email.com</email> -->
+<!--         <nationality rdf:datatype="&xsd;string">tunisian</nationality> -->
+<!--         <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/> -->
+<!--         <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/> -->
+<!--         <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/> -->
+<!--         <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/> -->
+<!--     </owl:NamedIndividual> -->
+
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#ahmed">
+            <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Client"/>
+            <rdf:type rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#Utilisateur"/>
+            <ID rdf:datatype="&xsd;int">8</ID>
+            <phone rdf:datatype="&xsd;long">12345678</phone>
+            <gender rdf:datatype="&xsd;string">homme</gender>
+            <biography rdf:datatype="&xsd;string">je suis ahmed</biography>
+            <name rdf:datatype="&xsd;string">ahmed</name>
+            <email rdf:datatype="&xsd;string">ahmed@email.com</email>
+            <nationality rdf:datatype="&xsd;string">tunisian</nationality>
+            <goingToEvent rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#art_fest"/>
+            <followedByUser rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#oussema"/>
+            <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting1"/>
+            <likesArtwork rdf:resource="http://www.semanticweb.org/asus/ontologies/2023/9/linkedarto#painting2"/>
+        </owl:NamedIndividual>
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
